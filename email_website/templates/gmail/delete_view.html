@@ -1,0 +1,12 @@
+{% extends "gmail/base.html" %}
+
+{% block title %}Compose{% endblock %}
+{% load static %}
+{% block content %}
+
+
+<form action="#" method="post">{% csrf_token %}
+         <p>Are you sure you want to delete "{{ object.text }}"?</p>
+         <p><input type="submit" value="Yes" /><a href="../">Cancel</a></p>
+      </form>
+{% endblock %}

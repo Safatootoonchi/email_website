@@ -1,0 +1,35 @@
+.editable {
+    width: 360px;
+    height: 120px;
+    border: 1px solid #ccc
+  }
+  
+  .none { /* Added to reset styles correctly */
+    font-weight: normal;   /* Reset b */
+    text-decoration: none; /* Reset u */
+    font-style: normal;    /* Reset i */
+  }
+  
+  .bolded {
+    font-style: bold;
+  }
+  
+  .underline {
+    text-decoration: underline;
+  }
+  
+  .red {
+    color: red;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .green {
+    color: green;
+  }
+
+  .blue {
+    color: blue;
+  }

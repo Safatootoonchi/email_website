@@ -1,0 +1,37 @@
+{% extends "gmail/base.html" %}
+
+{% block title %}Compose{% endblock %}
+{% load static %}
+{% block content %}
+<div style="background-color: rgb(161, 237, 172);">
+    <div style="margin: 10px 20px;">
+        <h4 style="color: rgb(242, 114, 114);">days left : {{day}}</h4>
+        <p>Title: {{object.title}}</p>
+
+        <p>Subject: {{object.content|safe}}</p>
+
+        <p>Receiver: {{object.to}}</p>
+        <br>
+
+        <p>CC: {{object.cc}}</p>
+        <br>
+        {% if object.file %}
+        <p>File: {{object.file}}</p>
+        <a href="{{ object.file.url }}" download>Download File.</a>
+        {% endif %}
+        <div style=";margin:10px 0 ">
+
+        <form action="" method="post">
+            <div style="margin:0 40px">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input style="margin:10px 0" type="submit" class="btn btn-light" value="No trash">
+
+            </div>
+        </form>
+
+            </div>
+    </div>
+</div>
+
+{% endblock %}

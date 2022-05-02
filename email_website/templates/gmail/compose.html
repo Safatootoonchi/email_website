@@ -1,0 +1,31 @@
+{% extends "gmail/base.html" %}
+
+{% block title %}Compose{% endblock %}
+{% load static %}
+{% block content %}
+
+<div style="width:900px;background-color: rgb(238, 238, 238);">
+    <main>
+        <h4 class="text-center">New Message</h4>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{email_form.media}}
+            {{email_form.as_p}}
+            <div class="form-group" style="margin:0 73px">
+                <button type="submit" name="send" class="btn btn-success">Send</button>
+                <button type="submit" name="draft" class="btn btn-danger">Draft</button>
+            </div>
+
+        </form>
+
+    </main>
+
+
+    <script src="{% static 'email/font.js' %}"></script>
+
+
+</div>
+<script src="{% static 'font/font.js' %}"></script>
+<link rel="stylesheet" href="{% static 'font/font.css' %}">
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "gmail/base.html" %}
+
+{% block title %}Compose{% endblock %}
+{% load static %}
+{% block content %}
+<div style="background-color: rgb(233, 202, 202);">
+    <div style="margin: 10px 20px;">
+        <p>email: {{object.email}}</p>
+        <p>name: {{object.name}}</p>
+        <p>phone: {{object.phone}}</p>
+        <p>other_email: {{object.other_email}}</p>
+        <p>birthday: {{object.birthday}}</p>
+
+    </div>
+</div>
+
+{% endblock %}

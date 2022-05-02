@@ -1,0 +1,14 @@
+{% extends "gmail/base.html" %}
+
+{% block title %}Compose{% endblock %}
+{% load static %}
+{% block content %}
+<p style="margin:0 20px ">
+    {% for e in email %}
+    <a style="background-color: rgb(200, 200, 200);" href="/email/detail-send/{{e.id}}/">{{e.id}} title:{{e.title}}
+        &nbsp&nbsp &nbsp &nbsp &nbspsubject:{{e.content|safeseq|join:" "|truncatewords:1}} &nbsp&nbsp
+        &nbsp &nbsp &nbspFrom:{{e.user.name}}</a>
+    <br>
+    {% endfor %}
+</p>
+{% endblock %}

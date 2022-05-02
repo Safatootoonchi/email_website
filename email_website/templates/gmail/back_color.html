@@ -1,0 +1,13 @@
+{% extends "gmail/base.html" %}
+
+{% block title %}Compose{% endblock %}
+{% load static %}
+{% block content %}
+<p style="margin:0 20px ">
+    {% for b in s %}
+    <button id={{b.0}} style="background-color: {{b.1}} ; margin:5px;"><a href="/email/">color:{{b.color}}</a></button>
+    <br>
+    {% endfor %}
+</p>
+
+{% endblock %}

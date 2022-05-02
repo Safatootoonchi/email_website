@@ -1,0 +1,17 @@
+{% extends "gmail/base.html" %}
+
+{% block title %}Compose{% endblock %}
+{% load static %}
+{% block content %}
+<div style="background-color: rgb(154, 214, 139); padding: 50px">
+<h5 style="margin:30px 0; color: rgb(71, 79, 197);">you have {{object_list.count}} signature{{object_list.count|pluralize}}</h5>
+
+{% for sign in object_list%}
+    <a href="/email/signature-detail/{{sign.id}}">
+    <li>{{sign.text}}</li>
+        </a>
+
+{% endfor %}
+
+</div>
+{% endblock %}

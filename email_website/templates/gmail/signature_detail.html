@@ -1,0 +1,16 @@
+{% extends "gmail/base.html" %}
+
+{% block title %}Compose{% endblock %}
+{% load static %}
+{% block content %}
+<div style="background-color: rgb(233, 202, 202);">
+    <div style="margin: 10px 20px; padding:90px">
+        <h4 style="color: darkviolet;">{{object.text}}</h4>
+
+            <a href="/email/delete-sign/{{object.id}}"><button style="margin:20px 0" type="submit" class="btn btn-danger" value="Delete">Delete</button></a>
+
+
+    </div>
+</div>
+
+{% endblock %}

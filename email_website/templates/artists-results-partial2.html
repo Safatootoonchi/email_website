@@ -1,0 +1,9 @@
+{% if artists %}
+    <ul>
+        {% for artist in artists %}
+        <a href="/email/contact-detail/{{artist.id}}"><li>{{artist}}</li></a>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No artists found.</p>
+{% endif %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: #bbbce3">
+
+<form action="validation-form" method="post">
+     <h4 style="color:  rgb(48, 221, 169);">Welcome {{user.name }}</h4>
+    <h1 style="text-align:center;margin-top:60px;color: #8d8b8b">VALIDATIONS</h1>
+    {% csrf_token %}
+    <div style="text-align:center;margin: 100px 500px;background-color: #efa2e1">
+        <br>
+        <br>
+    {{form.as_p}}
+         <br>
+        <br>
+    <input style="background-color: #ef9b7f" type="submit" value="Save">
+        <br>
+        <br>
+        <br>
+        </div>
+    </form>
+<p style="color: red">{{ message }}</p>
+</body>
+</html>

@@ -1,0 +1,6 @@
+ERROR 2022-04-06 23:08:34,076 views <ul class="errorlist"><li>password2<ul class="errorlist"><li>The two password fields didn’t match.</li></ul></li></ul>
+ERROR 2022-04-06 23:09:13,122 views <ul class="errorlist"><li>date_of_birth<ul class="errorlist"><li>Enter a valid date.</li></ul></li></ul>
+WARNING 2022-04-06 23:09:48,386 views username or password was wrong
+WARNING 2022-04-06 23:10:00,294 views username or password was wrong
+WARNING 2022-04-07 09:15:32,674 views username or password was wrong
+WARNING 2022-04-24 14:10:41,094 views username or password was wrong

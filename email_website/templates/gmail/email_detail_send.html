@@ -1,0 +1,83 @@
+{% extends "gmail/base.html" %}
+
+{% block title %}Compose{% endblock %}
+{% load static %}
+{% block content %}
+<div style="background-color: rgb(233, 202, 202);">
+    <div style="margin: 10px 20px;">
+        <p>Title: {{object.title}}</p>
+
+        <p>Subject: {{object.content|safe}}</p>
+
+        <p>From: {{object.user.name}}</p>
+
+        <p>To: {{object.to}}</p>
+        <br>
+
+        <p>CC: {{object.cc}}</p>
+        <p>BCC: {{object.bcc}}</p>
+        <br>
+        {% if object.file %}
+        <p>File: {{object.file}}</p>
+        <a href="{{ object.file.url }}" download>Download File.</a>
+        {% endif %}
+        <form action="" method="post">
+            <div style="margin:20px 0">
+                {% csrf_token %}
+                <button type="submit" name="archive" class="btn btn-light">Archive</button>
+            </div>
+
+        </form>
+        <form action="" method="post">
+            <div style="margin:20px 0">
+                {% csrf_token %}
+                <button type="submit" name="trash" class="btn btn-danger">Delete</button>
+            </div>
+
+        </form>
+
+        <form action="" method="post">
+            <div style="background-color: rgb(171, 217, 243);margin:10px 0;padding:10px; ">
+                <p>Add Label</p>
+                <div style="margin:0 40px">
+                    {% csrf_token %}
+                    {{form_l.as_p}}
+                    <button type="submit" name="save" class="btn btn-warning">Save</button>
+
+                </div>
+            </div>
+        </form>
+
+        <form action="" method="post">
+            <div style="background-color: rgb(171, 217, 243);margin:30px 0;padding:10px; ">
+                <p>Reply</p>
+                <div style="margin:0 40px">
+                    {% csrf_token %}
+                    {{form_r.media}}
+                    {{form_r.as_p}}
+                    <button type="submit" name="reply" class="btn btn-danger">Reply</button>
+
+
+                </div>
+            </div>
+        </form>
+        <form action="" method="post">
+            <div style="background-color: rgb(171, 217, 243);margin:30px 0;padding:10px; ">
+                <p>Forward</p>
+                <div style="margin:0 40px">
+                    {% csrf_token %}
+                    {{form_f.as_p}}
+
+                    <button type="submit" name="forward" class="btn btn-danger">Forward</button>
+
+
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+</div>
+
+{% endblock %}

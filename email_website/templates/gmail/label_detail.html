@@ -1,0 +1,33 @@
+{% extends "gmail/base.html" %}
+
+{% block title %}Compose{% endblock %}
+{% load static %}
+{% block content %}
+
+<div style="background-color: rgb(231, 231, 225);">
+    <div style="margin: 10px 20px;padding:20px">
+        <h4 style="color: darkviolet;">{{label.title}}</h4>
+        {% for i in object%}
+
+        <div style="background-color: rgb(233, 202, 202);margin:20px 0;padding:10px ">
+            <p>Email Title: {{i.title}}</p>
+
+            <p>Email Subject: {{i.content}}</p>
+
+            <p>Email Receiver: {{i.to}}</p>
+            {% if i.file %}
+            <p>File: {{i.file}}</p>
+            <a href="{{ i.file.url }}" download>Download File.</a>
+            {% endif %}
+        </div>
+
+        {% endfor %}
+
+            <form action="" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger" value="Delete">Delete</button>
+                           </form>
+    </div>
+</div>
+
+{% endblock %}

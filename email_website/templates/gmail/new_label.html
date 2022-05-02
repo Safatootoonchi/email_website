@@ -1,0 +1,15 @@
+{% extends "gmail/base.html" %}
+
+{% block title %}Compose{% endblock %}
+{% load static %}
+{% block content %}
+
+<form action="/email/label" method="post">
+    <div style="margin:0 40px">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Save">
+    </div>
+</form>
+
+{% endblock %}

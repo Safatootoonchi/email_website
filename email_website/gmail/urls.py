@@ -1,0 +1,38 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('compose/', views.NewEmail.as_view(), name='compose'),
+    path('sent/', views.sent, name='sent'),
+    path('inbox/', views.inbox, name='inbox'),
+    # path('inbox/', views.inbox, name='inbox'),
+    # path('detail/<int:id>/', views.email_detail, name="email-detail"),
+    path('detail-send/<int:id>/', views.email_detail_send, name="email_detail_sent"),
+    path('detail-label/<int:id>', views.label_detail, name="label_detail"),
+    # path('label', views.NewLabel.as_view(), name="label"),
+    path('label-list', views.label_list, name="label_list"),
+    path('filter', views.FilterView.as_view(), name="filter"),
+    path('contact', views.ContactView.as_view(), name="contact"),
+    path('contact-list', views.ContactList.as_view(), name="contact_list"),
+    path('contact-detail/<int:id>', views.signature_detail, name="contact_detail"),
+    path('search-email', views.search_email, name="search_email"),
+    path('search-contact', views.search_contact, name="search_contact"),
+    path('signature', views.SignatureView.as_view(), name="signature"),
+    path('signature-list', views.SignatureList.as_view(), name="signature_list"),
+    path('signature-detail/<int:pk>', views.SignatureDetail.as_view(), name="signature_detail"),
+    path('csv', views.exportcsv, name="csv"),
+    path('test', views.test, name="test"),
+    path('email-sent-api/', views.email_sent_api, name="email_sent_api"),
+    path('email-received-api/', views.email_received_api, name="email_received_api"),
+    path('contact-api/', views.contact_api, name="contact_api"),
+    path('back-color/', views.BackColor.as_view(), name="back_color"),
+    path('delete-sign/<int:id>', views.SignatureDeleteView.as_view(), name="delete_sign"),
+    path('draft/', views.draft, name="draft"),
+    path('draft-detail/<int:id>/', views.draft_detail, name="draft_detail"),
+    path('archive/', views.archive, name="archive"),
+    path('archive-detail/<int:id>/', views.archive_detail, name="archive_detail"),
+    path('trash/', views.trash, name="trash"),
+    path('trash-detail/<int:id>/', views.trash_detail, name="trash_detail"),
+
+]

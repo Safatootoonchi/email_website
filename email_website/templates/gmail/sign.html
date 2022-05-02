@@ -1,0 +1,23 @@
+{% extends "gmail/base.html" %}
+
+{% block title %}Compose{% endblock %}
+{% load static %}
+{% block content %}
+<div style="background-color: rgb(146, 146, 146);padding:20px">
+    <div style="margin: 10px 20px;">
+
+        <h3 style="color: rgb(255, 255, 255);margin:0 0 40px 0">Set Signature</h3>
+        <form action="" method="post">
+            <div style="margin:0 40px">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input style="margin:10px 0" type="submit" class="btn btn-warning" value="Save">
+
+            </div>
+        </form>
+
+            </div>
+    </div>
+
+
+{% endblock %}

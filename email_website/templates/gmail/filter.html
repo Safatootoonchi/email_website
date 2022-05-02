@@ -1,0 +1,38 @@
+{% extends "gmail/base.html" %}
+
+{% block title %}Compose{% endblock %}
+{% load static %}
+{% block content %}
+<div style="background-color: rgb(233, 202, 202);padding:20px">
+    <div style="margin: 20px 20px;background-color: rgb(160, 160, 160);">
+        <h3 style="color: rgb(255, 255, 255);margin:0 0 40px 0;padding:10px;">Set filter</h3>
+        <form action="" method="post">
+            <div style="margin:0 40px">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input style="margin:10px 0" type="submit" class="btn btn-warning" value="Save" name="filter">
+
+            </div>
+        </form>
+
+    </div>
+
+    <div style="margin: 20px 20px;background-color: rgb(160, 160, 160);">
+        <h3 style="color: rgb(255, 255, 255);margin:0 0 40px 0; padding:10px;">Archive or Trash</h3>
+        <form action="" method="post">
+            <div style="margin:0 40px">
+                {% csrf_token %}
+                {{form2.filter_by}}
+                {{form2.text}}
+                <input style="margin:10px 0" type="submit" class="btn btn-warning" value="Archive" name="f_archive">
+                <input style="margin:10px 0" type="submit" class="btn btn-warning" value="Trash" name="f_trash">
+
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
